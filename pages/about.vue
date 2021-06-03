@@ -75,7 +75,7 @@
         <ExtLink url="http://chem-kit.metwork.science/">Documentation</ExtLink>
       </li>
       <li>
-        <ExtLink url="https://github.com/YannBeauxis/chem-kit"
+        <ExtLink url="https://github.com/metwork-project/chem-kit"
           >Source code</ExtLink
         >
       </li>
@@ -90,7 +90,7 @@
         <ExtLink :url="apiDocUrl">Documentation</ExtLink>
       </li>
       <li>
-        <ExtLink url="https://github.com/YannBeauxis/chem-kit-api"
+        <ExtLink url="https://github.com/metwork-project/chem-kit-api"
           >Source code</ExtLink
         >
       </li>
