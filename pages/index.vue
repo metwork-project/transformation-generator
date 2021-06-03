@@ -28,6 +28,7 @@
         :smarts="reaction.smarts"
         :chem-doodle-json="reaction.chemDoodleJson"
         class="column is-full-tablet is-full-desktop is-half-widescreen"
+        @load-smiles="loadSmiles"
       />
     </div>
   </section>
@@ -57,7 +58,11 @@ export default {
     loadExample: function() {
       let smiles =
         'Oc1ccc(cc1)-c1cc(=O)c2c(O)cc(O)c(O)c2o1.COc1cc(O)c2c(oc(cc2=O)-c2ccc(O)c(O)c2)c1O'
+      this.loadSmiles(smiles)
+    },
+    loadSmiles: function(smiles) {
       this.$refs.ketcher.setSmiles(smiles)
+      this.reactions = null
     }
   }
 }

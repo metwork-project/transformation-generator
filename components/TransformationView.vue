@@ -6,18 +6,27 @@
       :width="width"
       :height="height"
       alt="ChemDoodle Web Component"
-      style="background-color: rgb(255, 255, 255); border: 1px solid #ccc;"
+      style="background-color: rgb(255, 255, 255); border: 1px solid #ccc"
       >This browser does not support HTML5/Canvas.</canvas
     >
     <div
       class="is-flex is-flex-direction-row"
-      style="position:absolute; left:20px; bottom:25px"
+      style="position: absolute; left: 20px; bottom: 25px"
     >
+      <b-button
+        type="is-primary"
+        size="is-small"
+        class="mx-1"
+        @click="loadSmarts"
+      >
+        Edit
+      </b-button>
       <b-button
         v-clipboard:copy="smarts"
         v-clipboard:success="onCopy"
         type="is-primary"
         size="is-small"
+        class="mx-1"
       >
         Copy SMARTS
       </b-button>
@@ -39,6 +48,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   props: {
     reactionId: {
@@ -93,6 +104,13 @@ export default {
   methods: {
     onCopy: function() {
       this.smartsCopied = true
+    },
+    loadSmarts: function() {
+      let url = process.env.NUXT_ENV_CHEM_KIT_API_URL + '/smiles_from_smarts'
+      axios.post(url, { smarts: this.smarts }).then((response) => {
+        let smiles = response.data.join('.')
+        this.$emit('load-smiles', smiles)
+      })
     }
   }
 }
