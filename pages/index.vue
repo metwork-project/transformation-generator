@@ -61,7 +61,7 @@ export default {
     },
     loadExample: function() {
       let smiles =
-        'Oc1ccc(cc1)-c1cc(=O)c2c(O)cc(O)c(O)c2o1.COc1cc(O)c2c(oc(cc2=O)-c2ccc(O)c(O)c2)c1O'
+        'OC1=CC=C(C=C1)C1=CC(=O)C2=C(O)C=C(O)C(O)=C2O1.COC1=CC(O)=C2C(=O)C=C(OC2=C1O)C1=CC=C(O)C(O)=C1'
       this.loadSmiles(smiles)
     },
     loadSmiles: function(smiles) {
