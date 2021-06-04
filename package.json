@@ -1,5 +1,5 @@
 {
-  "name": "rdkit_tools_ui",
+  "name": "transformation-generator",
   "version": "1.0.0",
   "private": true,
   "scripts": {

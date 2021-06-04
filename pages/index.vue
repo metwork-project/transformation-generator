@@ -50,7 +50,11 @@ export default {
         process.env.NUXT_ENV_CHEM_KIT_API_URL + '/transformations_from_smiles/'
       let smilesInput = smiles.split('.')
       axios
-        .post(url, { smiles: smilesInput, params: this.$refs.params.params })
+        .post(url, {
+          smiles: smilesInput,
+          reverse: true,
+          params: this.$refs.params.params
+        })
         .then((response) => {
           this.reactions = response.data
         })
